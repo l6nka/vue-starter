@@ -11,7 +11,7 @@
     <div v-else>
       <div>Witaj {{ email }}</div>
       <div>
-        <a href="#" @click="logIn()">Wyloguj</a>
+        <a href="?" @click="logIn()">Wyloguj</a>
       </div>
     </div>
   </div>
@@ -27,7 +27,9 @@ export default {
   },
   methods: {
     logIn() {
-      this.isLoggedIn = !this.isLoggedIn
+      if (this.email !== ''){
+        this.isLoggedIn = !this.isLoggedIn
+      }
     }
   }
 }
